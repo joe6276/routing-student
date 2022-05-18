@@ -17,3 +17,12 @@
     font-size: 20px;
     margin-top: 50px;
 }
+
+.student-image{
+    width: 200px;
+    height:200px;
+}
+.student-image img{
+    width: 100%;
+    height: 100%;
+}

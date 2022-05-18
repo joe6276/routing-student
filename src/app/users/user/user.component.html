@@ -1,6 +1,9 @@
 
 <div *ngIf="student else nostudent">
     <div>
+        <div>
+            <img src={{student.img}} alt="">
+        </div>
         <p>{{student.name}}</p>
         <p>{{student.age}}</p>
         <button  (click)="editUser()" class="edit">Edit {{student.name}}</button>
