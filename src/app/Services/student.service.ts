@@ -40,25 +40,31 @@ students:StudentInterface[]=[
 getStudents(){
    return this.students
 }
-getStudent(index:number){
-  return this.students[index]
+getStudent(id:string){
+  return this.students.find((x)=>x.id===id)
 }
 addStudent(id:string, name:string, age :number){
   this.students.push({id,name,age,role:'user'})
 }
-deleteStudent(index:number){
+deleteStudent(id:string){
+
+  const index=this.students.findIndex(x=>x.id===id)
   this.students.splice(index,1)
 }
-updateStudent(index:number, newname:string,newage:number){
-const student= this.getStudent(index)
-student.name= newname
-student.age= newage
+updateStudent(id:string, newname:string,newage:number){
+const student= this.students.find(x=>x.id===id)
+if(student){
+  student.name=newname
+  student.age= newage
+}
 }
 
 
-upgradetoAdmin(index:number){
-  const user= this.students[index]
-  user.role='admin'
-  return user
+upgradetoAdmin(id:string){
+  const user= this.students.find((x)=>x.id===id)
+  if(user){
+    user.role='admin'
+  }
+ 
 }
 }

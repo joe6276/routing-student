@@ -5,12 +5,14 @@
     <div *ngIf="isvalid">
         <p [style]="{color:'red'}">* Please input all fields</p>
         </div>
+        <label for=""> Id</label>
+<input  class='txt' #id type="text" />
 <label for=""> Student Name</label>
 <input  class='txt' #studentname type="text" />
 <label for=""> Student Age</label>
 <input  class='txt'   #studentage type="number" />
 
 
-<button (click)="addStudent(studentname.value,+studentage.value)" class="btn">Add Student</button>
+<button (click)="addStudent(id.value,studentname.value,+studentage.value)" class="btn">Add Student</button>
 
 </div>

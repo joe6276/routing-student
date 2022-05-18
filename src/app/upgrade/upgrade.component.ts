@@ -16,7 +16,7 @@ export class UpgradeComponent implements OnInit {
     this.students= this.studentService.getStudents()
   }
 
-  UpgradeUser(index:number){   
+  UpgradeUser(index:string){   
     this.studentService.upgradetoAdmin(index)
     this.router.navigate(['../'], {relativeTo:this.route})
   }

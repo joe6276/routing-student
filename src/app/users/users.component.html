@@ -6,10 +6,10 @@
     <div class="container">
     <div class="header">
         <a 
-        [routerLink]="['/users',id]"
+        [routerLink]="['/users',student.id]"
         routerLinkActive="selected"
         [queryParams]="{allowEdit:student.role==='admin'? '1' : '0'}"
-        *ngFor="let student of students ; let id=index"
+        *ngFor="let student of students ;"
         >
         {{student.name}}
     </a>

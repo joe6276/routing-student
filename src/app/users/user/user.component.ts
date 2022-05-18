@@ -10,8 +10,8 @@ import { StudentInterface } from 'src/Interfaces/Student';
 })
 export class UserComponent implements OnInit {
 isselected:boolean=false
-ids!:number
-student!:StudentInterface
+ids!:string
+student?:StudentInterface
   constructor(private studentService:StudentService, 
     private route :ActivatedRoute,
     private router:Router
@@ -20,8 +20,9 @@ student!:StudentInterface
   ngOnInit(): void {
    this.route.params.subscribe((param:Params)=>{
     
-     this.ids=+param['id']
-      this.student=this.studentService.getStudent(param['id'])
+    
+     this.ids=param['id']
+      this.student=this.studentService.getStudent(this.ids)     
 
    })
   }
@@ -32,7 +33,7 @@ student!:StudentInterface
 
   deleteuser(){
    this.studentService.deleteStudent(this.ids)
-   this.router.navigate([ 'edit'],{relativeTo:this.route})
+   this.router.navigate([ '../'],{relativeTo:this.route})
   }
 
 }

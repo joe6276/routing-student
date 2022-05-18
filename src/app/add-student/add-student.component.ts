@@ -14,12 +14,12 @@ isvalid=false
   ngOnInit(): void {
   }
 
-  addStudent(name:string, age:number){
-   if(name.length===0){
+  addStudent(id:string,name:string, age:number){
+   if(name.length===0|| id.length===0){
      this.isvalid=true
    }
    else{
-    this.studentService.addStudent(name,age)
+    this.studentService.addStudent(id,name,age)
     this.router.navigate(['users'])
    }
   

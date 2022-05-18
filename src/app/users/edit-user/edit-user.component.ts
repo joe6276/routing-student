@@ -11,8 +11,8 @@ import { StudentInterface } from 'src/Interfaces/Student';
 })
 export class EditUserComponent implements OnInit {
 isvalid=false
-id!:number;
-student!:StudentInterface
+id!:string;
+student?:StudentInterface
 studentname:string =''
 studentage:number=0
 allowEdit=false
@@ -23,10 +23,12 @@ allowEdit=false
   ngOnInit(): void {
 
     this.route.params.subscribe((param:Params)=>{
-      this.id=+param['id']
+      this.id=param['id']
       this.student= this.studentService.getStudent(this.id)
-      this.studentname=this.student.name
+      if(this.student){
+        this.studentname=this.student.name
       this.studentage=this.student.age
+      }
     })
     this.route.queryParams.subscribe((qp:Params)=>{  
       this.allowEdit=qp['allowEdit']=== '1' ? true :false   

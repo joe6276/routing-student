@@ -3,5 +3,6 @@ export interface StudentInterface{
     name:string;
     age:number;
     role:string;
+    img:string;
 
 }
