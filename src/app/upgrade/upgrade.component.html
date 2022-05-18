@@ -1,0 +1,13 @@
+
+
+
+
+<div class="header">
+    <div   *ngFor="let student of students|filter ; let id=index" class="content">
+        <a>
+        {{student.name}}
+        </a>
+        <button (click)="UpgradeUser(id)"  class="upg">Upgrade</button>
+      </div>
+    
+</div>

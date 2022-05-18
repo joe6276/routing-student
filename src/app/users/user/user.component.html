@@ -1,0 +1,14 @@
+
+<div *ngIf="student else nostudent">
+    <div>
+        <p>{{student.name}}</p>
+        <p>{{student.age}}</p>
+        <button  (click)="editUser()" class="edit">Edit {{student.name}}</button>
+        <button (click)="deleteuser()" class="btn2">Delete {{student.name}}</button>
+       </div> 
+   
+</div>  
+
+    <ng-template #nostudent>
+        <p>No Student</p>
+    </ng-template>

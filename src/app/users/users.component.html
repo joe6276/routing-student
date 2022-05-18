@@ -1,0 +1,23 @@
+
+  <div *ngIf="students.length===0 ;else stud">
+<p class="msg"> No Student!!!</p>
+  </div>
+  <ng-template #stud>
+    <div class="container">
+    <div class="header">
+        <a 
+        [routerLink]="['/users',id]"
+        routerLinkActive="selected"
+        [queryParams]="{allowEdit:student.role==='admin'? '1' : '0'}"
+        *ngFor="let student of students ; let id=index"
+        >
+        {{student.name}}
+    </a>
+    </div>
+
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+</div>
+
+  </ng-template>

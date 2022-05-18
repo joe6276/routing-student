@@ -1,0 +1,23 @@
+.header{
+    display: flex;
+    gap: 50px;
+    width: 100%;
+    background-color: black;
+     height: 30px;
+     padding: 10px 20px ;
+}
+.container{
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+a{
+    text-decoration: none;
+    color :white;
+}
+
+.a-selected{
+    color: red;
+  
+}
